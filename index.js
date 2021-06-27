@@ -28,8 +28,8 @@ const cosasQueAprendimos = [
 function main() { 
   
   var ul = document.getElementsByTagName("ul")
-  
-  
+  console.log(ul)
+  var liElement = ul[0].remove(ul[0]);
   
  cosasQueAprendimos.forEach((item)=>{
 
