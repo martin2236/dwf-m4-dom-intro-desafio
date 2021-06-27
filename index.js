@@ -27,9 +27,13 @@ const cosasQueAprendimos = [
 
 function main() { 
   
-  var ul = document.getElementsByTagName("ul")
-  console.log(ul)
-  var liElement = ul[0].remove(ul[0]);
+  var ulEl = document.querySelector(".lista")
+  
+  var listaEls = document.querySelectorAll(".lista li")
+  for (const item of listaEls) {
+    item.remove()
+  }
+  
   
  cosasQueAprendimos.forEach((item)=>{
 
@@ -39,17 +43,13 @@ function main() {
   
     liEl.appendChild(text)
     
-    //console.log(liEl)
+    if(item.class == "special"){
+      liEl.classList.add(item.class)
+    }
+    
+    ulEl.appendChild(liEl)
     
  })
 
-// for (let iterator of cosasQueAprendimos) {
-//   var newLi = document.createElement("li")
-//   newLi.textContent = iterator.tema;
-//   newLi.classList.add(iterator.class||"item")
-//   ul.appendChild(newLi)
-// }
-
-  
  } 
 main();
